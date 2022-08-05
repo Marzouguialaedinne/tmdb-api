@@ -1,8 +1,8 @@
 # TMDB_API
 
 # Requirements
-   PHP 7.4
-   Composer
+   PHP 7.4,
+   Composer,
    NPM or Yarn 
  # Installation
     git clone https://github.com/M04805659/tmdb-api.git
