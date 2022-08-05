@@ -1,0 +1,30 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <div class="poster-path" data-toggle="modal" data-target="#modalMovie{{ movie.id }}">
+                <img src="{{ image_tmdb ~ movie.poster_path }}" class="img-fluid rounded-start" alt="...">
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <div class="info-1">
+                    <h5 class="card-title text-muted">{{ movie.title}} </h5>
+                    <div class="star-movie">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <div class="vote-count">
+                        <span class="text-muted"> ( {{ movie.vote_count }} Vote)</span>
+                    </div>
+                </div>
+                <span class="card-text text-muted"> {{ movie.release_date|date("Y") }} </span>
+                <p class="card-text text-muted">{{ movie.overview|slice(0, 150) }} ...</p>
+                <button type="button" class="btn btn-secondary btn-lg ">Lire le détail</button>
+            </div>
+        </div>
+        {% include 'partials/_modal_movie.html.twig' %}
+    </div>
+</div>

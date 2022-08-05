@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <title>{% block title %}We Movies{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+
+<body>
+    <main class="container mt-4" role="main">
+        {# inlude menu #}
+        {% include 'partials/_nav.html.twig' %}
+        {% include 'partials/_iframe_video.html.twig' %}
+        {% block body %}{% endblock %}
+    </main>
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock javascripts%}
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    globals:
+      video_youtube: 'https://www.youtube.com/embed/'
+      image_tmdb: 'https://image.tmdb.org/t/p/w500/'
+
+when@test:
+    twig:
+        strict_variables: true

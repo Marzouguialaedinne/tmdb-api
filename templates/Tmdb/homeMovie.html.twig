@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-4">
+            {% include 'partials/_genres.html.twig' %}
+        </div>
+        <div class="col">
+            {% if moviesByGenre is defined %}
+                {% for movieGenre in moviesByGenre %}
+                    {% set movie =  movieGenre  %}
+                    {% include 'partials/_card_movie.html.twig' with {'movie':  movie }  %}
+                {% endfor %}
+            {% else %}
+                {% set movie =  popularMovies  %}
+                {% include 'partials/_card_movie.html.twig' with {'movie':  movie }  %}
+            {% endif %}
+        </div>
+    </div>
+    {% if moviesByGenre is defined %}
+        <nav aria-label="...">
+            <ul class="pagination">
+                {{ knp_pagination_render(moviesByGenre, "@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig", {"currentGenre": currentGenre, "count" : moviesByGenre|length }) }}
+            </ul>
+        </nav>
+    {% endif %}
+{% endblock %}
